@@ -8,9 +8,11 @@ export interface Product {
   image: string;
   category: string;
   origin: string;
+  producer: string;
   weight: string;
   rating: number;
   reviews: number;
+  isNew?: boolean;
 }
 
 export interface CartItem extends Product {

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
               Conectando você ao melhor da terra. Frutas frescas, selecionadas e entregues com amor em Angola.
             </p>
             <div className="flex gap-4">
-              {['IG', 'FB', 'TW'].map((social) => (
+              {['IG', 'FB', 'WA'].map((social) => (
                 <a key={social} href="#" className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs font-bold hover:bg-primary hover:text-white transition-all">
                   {social}
                 </a>
@@ -27,34 +28,34 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-6">Empresa</h4>
             <ul className="space-y-4 text-sm text-gray-500">
-              <li><a href="#" className="hover:text-primary">Sobre Nós</a></li>
-              <li><a href="#" className="hover:text-primary">Produtores</a></li>
-              <li><a href="#" className="hover:text-primary">Carreiras</a></li>
+              <li><Link to="/sobre" className="hover:text-primary transition-colors">Sobre Nós</Link></li>
+              <li><Link to="/agricultores" className="hover:text-primary transition-colors">Nossos Agricultores</Link></li>
+              <li><Link to="/produtor" className="hover:text-primary transition-colors">Quero ser Produtor</Link></li>
+              <li><Link to="/sazonalidade" className="hover:text-primary transition-colors">Calendário de Sazonalidade</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Ajuda</h4>
+            <h4 className="font-bold mb-6">Suporte</h4>
             <ul className="space-y-4 text-sm text-gray-500">
-              <li><a href="#" className="hover:text-primary">Central de Ajuda</a></li>
-              <li><a href="#" className="hover:text-primary">Termos</a></li>
-              <li><a href="#" className="hover:text-primary">Políticas</a></li>
+              <li><Link to="/ajuda" className="hover:text-primary transition-colors">Centro de Ajuda / FAQ</Link></li>
+              <li><Link to="/contacto" className="hover:text-primary transition-colors">Contacto Directo</Link></li>
+              <li><Link to="/privacidade" className="hover:text-primary transition-colors">Política de Privacidade</Link></li>
+              <li><Link to="/termos" className="hover:text-primary transition-colors">Termos de Uso</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Newsletter</h4>
-            <p className="text-sm text-gray-500 mb-4">Receba ofertas exclusivas.</p>
-            <form className="flex gap-2">
-              <input type="email" placeholder="Seu email" className="bg-gray-50 dark:bg-gray-800 border-none rounded-lg text-sm flex-1" />
-              <button className="bg-primary text-white p-2 rounded-lg">
-                <span className="material-icons text-sm">send</span>
-              </button>
-            </form>
+            <h4 className="font-bold mb-6">A Minha Etuti</h4>
+            <ul className="space-y-4 text-sm text-gray-500">
+              <li><Link to="/perfil" className="hover:text-primary transition-colors">Minha Conta</Link></li>
+              <li><Link to="/checkout" className="hover:text-primary transition-colors">Minhas Encomendas</Link></li>
+              <li><Link to="/assinatura" className="hover:text-primary transition-colors">Gerir Assinatura</Link></li>
+            </ul>
           </div>
         </div>
         <div className="pt-8 border-t border-gray-100 dark:border-gray-800 text-center text-sm text-gray-500">
-          © 2024 ETUTI, Wete Wa Nsi. Todos os direitos reservados.
+          © 2024 ETUTI, Wete Wa Nsi. Luanda, Angola.
         </div>
       </div>
     </footer>
