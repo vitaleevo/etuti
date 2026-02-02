@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETUTI - Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2E7D32", // Green from logo
+                        secondary: "#FBC02D", // Yellow from logo
+                        "background-light": "#F9FAFB", // Very light grey/off-white
+                        "background-dark": "#111827", // Dark gray for dark mode
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1F2937",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#374151",
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                        body: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-gray-800 dark:text-gray-200 min-h-screen flex flex-col transition-colors duration-200">
+<nav class="bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark py-4 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+<div class="flex items-center space-x-2">
+<div class="flex items-center">
+<span class="material-icons text-primary text-3xl">eco</span>
+<span class="text-2xl font-bold tracking-tight ml-1">
+<span class="text-secondary">E</span><span class="text-primary">TUTI</span>
+</span>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition">
+<span class="material-icons">shopping_bag</span>
+</button>
+<button class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition">
+<span class="material-icons">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+<div class="mb-12">
+<div class="flex items-center justify-center space-x-4 sm:space-x-8 w-full max-w-3xl mx-auto">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-lg ring-4 ring-primary/20">
+                        1
+                    </div>
+<span class="mt-2 text-sm font-semibold text-primary">Entrega</span>
+</div>
+<div class="h-1 flex-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+<div class="flex flex-col items-center opacity-50">
+<div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 flex items-center justify-center font-bold">
+                        2
+                    </div>
+<span class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">Pagamento</span>
+</div>
+<div class="h-1 flex-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+<div class="flex flex-col items-center opacity-50">
+<div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 flex items-center justify-center font-bold">
+                        3
+                    </div>
+<span class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">Confirmação</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6 sm:p-8">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white flex items-center">
+<span class="material-icons mr-2 text-primary">location_on</span>
+                            Endereço de Entrega
+                        </h2>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="cep">CEP / Zona</label>
+<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-3" id="cep" placeholder="Ex: Luanda Sul" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="city">Cidade / Província</label>
+<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-3" id="city" type="text" value="Luanda"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="sm:col-span-2">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="street">Rua / Avenida</label>
+<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-3" id="street" placeholder="Nome da rua" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="number">Número</label>
+<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-3" id="number" placeholder="Casa/Apto" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="bairro">Bairro</label>
+<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-3" id="bairro" placeholder="Seu bairro" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="phone">Telefone</label>
+<div class="relative rounded-md shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="text-gray-500 sm:text-sm">+244</span>
+</div>
+<input class="focus:ring-primary focus:border-primary block w-full pl-14 sm:text-sm border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg p-3" id="phone" name="phone" placeholder="9xx xxx xxx" type="tel"/>
+</div>
+</div>
+</div>
+<div class="flex items-center pt-2">
+<input class="h-5 w-5 text-primary focus:ring-primary border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600" id="save-address" name="save-address" type="checkbox"/>
+<label class="ml-3 block text-sm text-gray-700 dark:text-gray-300" for="save-address">
+                                Salvar este endereço para a próxima vez
+                            </label>
+</div>
+</form>
+</div>
+<div class="flex items-center justify-between pt-4">
+<a class="flex items-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 font-medium transition" href="#">
+<span class="material-icons mr-1">chevron_left</span>
+                        Voltar ao Carrinho
+                    </a>
+<button class="bg-primary hover:bg-green-800 text-white px-8 py-3 rounded-lg font-semibold shadow-md shadow-primary/30 transition transform hover:-translate-y-0.5 flex items-center">
+                        Continuar
+                        <span class="material-icons ml-2">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg border border-border-light dark:border-border-dark p-6 sticky top-24">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6 pb-2 border-b border-gray-100 dark:border-gray-700">Resumo do Pedido</h3>
+<ul class="space-y-4 mb-6">
+<li class="flex py-2">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 dark:border-gray-700 bg-white">
+<img alt="Abacaxi fresco cortado" class="h-full w-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9smGXq9LYDGb4Bg9vZ7w5OTCEUO1nvwX0xX9Ko5AEXk6LZpwHzuNQwyZMyPVuC2aULnUrviXW48LEnmgexaI5jAMAUEgGpV4aZrZR2KnCjtnqEpgvoHnkcn5WEySViQkQCmor0G95aUIpXGrzs2fMhUl8CKDAWpjp0uFOfegL8xSdwW3XhU0_Cbw_thxJ_6HWVyWm_QwGyLFs-lTEf-B1qtp2k8Ge5Lo4mXvmz8dG8CBL3ZEhmr_JZoxn932fZM0B8i3FnzIVWJc"/>
+</div>
+<div class="ml-4 flex flex-1 flex-col">
+<div>
+<div class="flex justify-between text-base font-medium text-gray-900 dark:text-white">
+<h3>Abacaxi Doce</h3>
+<p class="ml-4 text-primary font-semibold">4.000 Kz</p>
+</div>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Fresco • Unidade</p>
+</div>
+<div class="flex flex-1 items-end justify-between text-sm">
+<p class="text-gray-500 dark:text-gray-400">Qtd 2</p>
+</div>
+</div>
+</li>
+<li class="flex py-2">
+<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 dark:border-gray-700 bg-white">
+<img alt="Morangos vermelhos" class="h-full w-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp0wqejWMnVD5Fr1qOpj1-8RQk84UJo_F01S-jLJH_3WTPHQZLU9Mu83iZ7vpqT7qD3uxTycuLlZMERy9ZKnf2JNX7svCmhtmhwmdfVHfPeepa9FzjUjt_k4r9llhSigtv88rk8C9jRVpPkhBtbtg6Ow0whbenpKFsi6ybw_bbBSv5LqZ74kPCrYxjV7duc9svy-2ocG1EGMtUj6I17OSBYI9l93xnlPE4AyznsdagsZqJHxIVeyOfpqxZ-tt8U9k6GrEr2jlz-uQ"/>
+</div>
+<div class="ml-4 flex flex-1 flex-col">
+<div>
+<div class="flex justify-between text-base font-medium text-gray-900 dark:text-white">
+<h3>Morango Cx</h3>
+<p class="ml-4 text-primary font-semibold">3.500 Kz</p>
+</div>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Orgânico • 500g</p>
+</div>
+<div class="flex flex-1 items-end justify-between text-sm">
+<p class="text-gray-500 dark:text-gray-400">Qtd 1</p>
+</div>
+</div>
+</li>
+</ul>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="discount">Código de desconto</label>
+<div class="flex space-x-2">
+<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-2.5" id="discount" name="discount" placeholder="CUPOM" type="text"/>
+<button class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 px-4 rounded-lg font-medium text-sm transition" type="button">Aplicar</button>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-700 pt-4 space-y-2">
+<div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+<p>Subtotal</p>
+<p>11.500 Kz</p>
+</div>
+<div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+<p>Taxa de entrega</p>
+<p>700 Kz</p>
+</div>
+<div class="flex justify-between text-base font-bold text-gray-900 dark:text-white pt-2 border-t border-dashed border-gray-200 dark:border-gray-700 mt-2">
+<p>Total</p>
+<p class="text-xl text-primary">12.200 Kz</p>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-center space-x-2 text-xs text-gray-400 dark:text-gray-500">
+<span class="material-icons text-sm">lock</span>
+<span>Pagamento 100% seguro</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark py-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400">
+                © 2023 ETUTI - Wete Wa Nsi. O Melhor da Terra. Todos os direitos reservados.
+            </p>
+</div>
+</footer>
+
+</body></html>

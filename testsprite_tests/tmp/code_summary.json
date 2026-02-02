@@ -1,0 +1,68 @@
+{
+    "tech_stack": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Tailwind CSS (CDN)",
+        "Leaflet (CDN)",
+        "React Router Dom"
+    ],
+    "features": [
+        {
+            "name": "Navigation & Layout",
+            "description": "Global Header and Footer with navigation links and dark mode toggle.",
+            "files": [
+                "components/Header.tsx",
+                "components/Footer.tsx",
+                "App.tsx"
+            ]
+        },
+        {
+            "name": "Homepage",
+            "description": "Main landing page with hero section, stats, featured products, and farmers spotlight.",
+            "files": [
+                "pages/Home.tsx"
+            ]
+        },
+        {
+            "name": "Product Catalog",
+            "description": "Browse fruits, view details, and add to cart.",
+            "files": [
+                "pages/Fruits.tsx",
+                "pages/ProductDetail.tsx",
+                "constants.tsx"
+            ]
+        },
+        {
+            "name": "E-commerce Flow",
+            "description": "Cart management and multi-step checkout process.",
+            "files": [
+                "pages/Checkout.tsx",
+                "App.tsx"
+            ]
+        },
+        {
+            "name": "Farmers Directory",
+            "description": "Interactive map and profiles of local farmers using Leaflet.",
+            "files": [
+                "pages/Farmers.tsx"
+            ]
+        },
+        {
+            "name": "User Accounts",
+            "description": "Login, registration, and user profile management.",
+            "files": [
+                "pages/Login.tsx",
+                "pages/Register.tsx",
+                "pages/Profile.tsx"
+            ]
+        },
+        {
+            "name": "Subscription",
+            "description": "Information and plans for periodic fruit deliveries.",
+            "files": [
+                "pages/Subscription.tsx"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-AO"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETUTI - Frutas Frescas na Sua Casa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2D8A3E", // Green from logo
+                        secondary: "#F5B800", // Yellow from logo
+                        "primary-dark": "#1f632b",
+                        "secondary-dark": "#c29100",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#111827",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1F2937",
+                        "text-light": "#1F2937",
+                        "text-dark": "#F3F4F6",
+                        "text-muted-light": "#6B7280",
+                        "text-muted-dark": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["'Plus Jakarta Sans'", "sans-serif"],
+                        body: ["'Plus Jakarta Sans'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'xl': '24px',
+                        '2xl': '32px',
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+        }
+        .hero-pattern {
+            background-color: #ffffff;
+            opacity: 0.05;
+            background-image: radial-gradient(#2D8A3E 0.5px, transparent 0.5px), radial-gradient(#2D8A3E 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .dark .hero-pattern {
+            opacity: 0.1;
+            background-image: radial-gradient(#F5B800 0.5px, transparent 0.5px), radial-gradient(#F5B800 0.5px, #111827 0.5px);
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 antialiased selection:bg-secondary selection:text-white">
+<nav class="fixed w-full z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+<div class="relative w-10 h-10 flex items-center justify-center">
+<span class="material-icons text-secondary text-4xl absolute -top-1">local_florist</span>
+<span class="material-icons text-primary text-2xl absolute top-1">eco</span>
+</div>
+<span class="font-display font-extrabold text-2xl tracking-tight">
+<span class="text-secondary">E</span><span class="text-primary">TUTI</span>
+</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-secondary font-medium transition-colors" href="#produtos">Produtos</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-secondary font-medium transition-colors" href="#assinatura">Assinatura</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-secondary font-medium transition-colors" href="#servicos">Serviços</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-secondary font-medium transition-colors" href="#sobre">Sobre Nós</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-gray-100 dark:bg-gray-700 rounded-full px-4 py-2">
+<span class="material-icons text-gray-400 dark:text-gray-300 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 placeholder-gray-400 dark:placeholder-gray-300 text-gray-700 dark:text-gray-200" placeholder="Buscar frutas..." type="text"/>
+</div>
+<button class="relative p-2 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+<span class="material-icons">shopping_bag</span>
+<span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-secondary ring-2 ring-white dark:ring-surface-dark"></span>
+</button>
+<button class="p-2 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full md:hidden">
+<span class="material-icons">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-green-50/50 to-white dark:from-gray-900 dark:to-background-dark">
+<div class="absolute inset-0 hero-pattern z-0 pointer-events-none"></div>
+<div class="absolute top-20 right-0 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl -z-10 transform translate-x-1/3"></div>
+<div class="absolute bottom-0 left-0 w-72 h-72 bg-secondary/10 dark:bg-secondary/20 rounded-full blur-3xl -z-10 transform -translate-x-1/3"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="text-center lg:text-left space-y-8">
+<div class="inline-flex items-center px-4 py-2 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-secondary-dark dark:text-yellow-400 text-sm font-bold tracking-wide mb-4 border border-yellow-200 dark:border-yellow-800 uppercase">
+<span class="material-icons text-lg mr-2">waving_hand</span> Wete Wa Nsi
+                    </div>
+<h1 class="font-display font-extrabold text-5xl lg:text-7xl leading-tight text-text-light dark:text-text-dark">
+                        Sabor de Angola, <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Frescura Viva.</span>
+</h1>
+<p class="text-lg text-text-muted-light dark:text-text-muted-dark max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                        Experimente o verdadeiro "Wete Wa Nsi" (O Valor da Terra). Frutas frescas, orgânicas e cheias de vida, entregues diretamente do produtor angolano para a sua mesa.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-green-500/30 transform hover:-translate-y-1" href="#produtos">
+                            Ver Produtos Frescos
+                            <span class="material-icons ml-2">shopping_basket</span>
+</a>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-surface-dark border-2 border-gray-100 dark:border-gray-700 hover:border-secondary dark:hover:border-secondary text-text-light dark:text-text-dark font-bold rounded-xl transition-all hover:bg-gray-50 dark:hover:bg-gray-800" href="#assinatura">
+                            Assinatura Mensal
+                        </a>
+</div>
+<div class="pt-8 flex items-center justify-center lg:justify-start gap-4 text-sm font-medium text-text-muted-light dark:text-text-muted-dark">
+<div class="flex items-center gap-1">
+<span class="material-icons text-primary text-xl">check_circle</span>
+<span>100% Orgânico</span>
+</div>
+<span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+<div class="flex items-center gap-1">
+<span class="material-icons text-primary text-xl">check_circle</span>
+<span>Entrega Rápida</span>
+</div>
+<span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+<div class="flex items-center gap-1">
+<span class="material-icons text-primary text-xl">check_circle</span>
+<span>Produtores Locais</span>
+</div>
+</div>
+</div>
+<div class="relative mt-8 lg:mt-0">
+<div class="relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-full blur-3xl transform scale-95"></div>
+<img alt="Montagem de frutas tropicais de alta qualidade" class="relative z-10 w-full h-auto object-cover rounded-[3rem] shadow-2xl shadow-green-900/20 dark:shadow-black/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADc7kdzDYSuDcqoHDGae-OF2QAkmVvXRe8MS50R5TItmiGXxCQAR2TWZYexTyQYilg4zxFuSj6xkaPS2pFzDTwm0BWHbPLvbKwObJOU-5L9moQdKO_u-7WArxt71s66NVZxpRWzH0dI8a56t3i296QOlQLZiJHmQjc7Qmm9rAHxDS1OeIcUOfgmRvefaUffCAlF__LVCYae776zUSfAWMJ29X8Q0Aauaci_Wq3mapQSy75E68tnEJXMHj0QbFuuN6Wn33NW6aTOyA"/>
+<div class="absolute -bottom-10 left-4 z-20 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100 dark:border-gray-700 animate-bounce" style="animation-duration: 4s;">
+<div class="bg-green-100 dark:bg-green-900/50 p-3 rounded-xl text-primary">
+<span class="material-icons">local_shipping</span>
+</div>
+<div>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark font-bold uppercase tracking-wider">Entrega em Luanda</p>
+<p class="text-lg font-bold text-text-light dark:text-text-dark">Em até 24h</p>
+</div>
+</div>
+<div class="absolute top-10 -right-6 z-20 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100 dark:border-gray-700 animate-bounce" style="animation-duration: 5s;">
+<div class="bg-yellow-100 dark:bg-yellow-900/50 p-3 rounded-xl text-secondary-dark dark:text-yellow-400">
+<span class="material-icons">verified</span>
+</div>
+<div>
+<p class="text-lg font-bold text-text-light dark:text-text-dark">Qualidade Premium</p>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark font-medium">Garantia ETUTI</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-surface-dark" id="sobre">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 bg-yellow-100 dark:bg-yellow-900/20 rounded-full -z-10"></div>
+<div class="absolute -bottom-4 -right-4 w-32 h-32 bg-green-100 dark:bg-green-900/20 rounded-full -z-10"></div>
+<img alt="Produtor Angolano na fazenda segurando frutas frescas" class="w-full h-[500px] object-cover rounded-3xl shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt0lPUjZ4UAs7da1t_8FgQtmpS2PIlsPTbJiLbJGRuwu6XBvqHReOJB3PA-QcJ0VTfMz7IubMsXaummt4KCLJNKdlDRdU1LluFORXVq7h20iuY7V1jl8a5fQzEluLfZSWUdPlx3NL33wjOzo5j934vy_kiwQyT7nbF3mdcCNPtfaKT2G6FBuyp6jJWvIwQZhyP536pfdVlszg-lqkj2u-Rzej8RvHdevvyKRE0o2qmsUN2Dn6tWo3BkcmVsRcS_heNvR7ggJvT0-w"/>
+<div class="absolute bottom-8 left-8 right-8 bg-white/90 dark:bg-surface-dark/90 backdrop-blur p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
+<p class="text-sm font-medium italic text-gray-600 dark:text-gray-300">"Cada fruta colhida aqui carrega a alma da nossa terra e o esforço das nossas mãos."</p>
+<p class="text-xs font-bold text-primary mt-2">- Sr. João, Produtor Parceiro no Bengo</p>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-6">
+<h2 class="text-primary font-bold uppercase tracking-widest text-sm">Nossa História</h2>
+<h3 class="text-4xl lg:text-5xl font-display font-extrabold text-text-light dark:text-text-dark leading-tight">
+                        Do Campo para a Mesa: <br/>Uma Missão de <span class="text-secondary">Orgulho Nacional</span>
+</h3>
+<p class="text-lg text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        A ETUTI nasceu com um propósito simples: valorizar o que é nosso. Acreditamos que as melhores frutas não precisam viajar oceanos para chegar até você. Elas crescem aqui mesmo, sob o sol de Angola.
+                    </p>
+<p class="text-lg text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        Trabalhamos diretamente com pequenos produtores locais, garantindo comércio justo e práticas sustentáveis. Quando você escolhe a ETUTI, você não está apenas comprando uma fruta; você está apoiando famílias, fortalecendo a economia local e levando saúde pura para sua casa.
+                    </p>
+<div class="pt-4">
+<a class="text-primary font-bold hover:text-primary-dark transition-colors inline-flex items-center gap-2 group" href="#">
+                            Conheça nossos produtores
+                            <span class="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-stone-50 dark:bg-[#151d2b] relative overflow-hidden" id="produtores">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8 order-2 lg:order-1">
+<div class="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-xs font-bold tracking-wider uppercase border border-orange-200 dark:border-orange-800">
+<span class="material-icons text-sm mr-2">agriculture</span> Nossos Produtores
+                </div>
+<h2 class="font-display font-extrabold text-4xl lg:text-5xl text-text-light dark:text-text-dark leading-tight">
+                    Histórias que Brotam da <span class="text-secondary">Terra Angolana</span>
+</h2>
+<p class="text-lg text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                    Acreditamos no conceito "Farm to Table" (da fazenda para a mesa). Cada fruta que chega à sua casa tem um rosto, um nome e uma história. Conectamos você diretamente à <strong>Fazenda Sol Nascente</strong> em Malanje e a dezenas de famílias que cultivam com amor e respeito à natureza.
+                </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+<div class="p-6 bg-white dark:bg-surface-dark rounded-2xl shadow-sm border border-stone-100 dark:border-gray-700 group hover:border-secondary/50 transition-colors">
+<span class="material-icons text-secondary text-3xl mb-3 group-hover:scale-110 transition-transform">compost</span>
+<h4 class="font-bold text-text-light dark:text-text-dark mb-1">Cultivo Natural</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Sem agrotóxicos nocivos, apenas o poder da terra.</p>
+</div>
+<div class="p-6 bg-white dark:bg-surface-dark rounded-2xl shadow-sm border border-stone-100 dark:border-gray-700 group hover:border-primary/50 transition-colors">
+<span class="material-icons text-primary text-3xl mb-3 group-hover:scale-110 transition-transform">handshake</span>
+<h4 class="font-bold text-text-light dark:text-text-dark mb-1">Comércio Justo</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Pagamos o valor real que o produtor merece.</p>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center text-primary font-bold hover:text-primary-dark transition-colors text-lg group" href="#">
+                        Conhecer mais produtores
+                        <span class="material-icons ml-2 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative order-1 lg:order-2">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-secondary/10 dark:bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-12 -left-12 w-64 h-64 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="relative rounded-[2rem] overflow-hidden shadow-2xl">
+<img alt="Agricultor na Fazenda Sol Nascente" class="w-full h-[650px] object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiKY3c81N0uY_4OD9ZcQ3gbYCNrp8DhzXoqKb5tcs-8Xhc0dX9HsR1dN0ff5pfCDKaxDaqkC4IH0Mbbw7EKrzZsWIgCCzFDs1sN7ZLwWFGDr1aEbgDDaFcsPhs-9PU_rO62bfRwZWb1BL6vOQTVu0AfPUUW4RdeOuwbi5YVvGOuzLJZEg-IaOVFXHX5pA6ofKhSsjSMVwMiS4F02kV-aOX2Sdp9wVxhy4q6VTG2eVfy0tmipP2LLOTkFpd1wh_7x1GncEi6Iv6zJw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-white">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Sr. Manuel" class="w-14 h-14 rounded-full border-2 border-secondary object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAayfg8uxolIR39Pt3xmmEgZfWYIYUBcE0uSfZ_yiyAJbOUaS31pP_vXfZBhtbzk1_jfmwXFPfBKrhkk1FbI6R8T89DOLJr__XZvOO3UiXWVT8O-BPapICOl-gz6YxepemULkFDV9b6tTXmn4nsD5i5PB3bCDLzDX-SIx4bFaIk72DDh6ISuLwdWHGQ9GsThIqJu0QKlqK75RY9hbMg8zfJad5TdAdVwP2uiVKes9SzkEAn8HkaLOEfEVY2JGh82FWfsoBa5-3ifO8"/>
+<div>
+<h4 class="font-bold text-xl">Sr. Manuel Teca</h4>
+<p class="text-xs font-bold text-secondary uppercase tracking-widest">Fazenda Sol Nascente, Malanje</p>
+</div>
+</div>
+<p class="text-gray-100 italic text-sm leading-relaxed border-l-2 border-primary pl-4">
+                            "Para nós, orgânico não é moda, é tradição. Cuidamos do solo como um membro da família, e ele nos retribui com frutas que têm o verdadeiro sabor de Angola."
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark" id="servicos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="font-display font-bold text-3xl lg:text-4xl text-text-light dark:text-text-dark mb-4">Serviços Feitos para Você</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg">Flexibilidade e conveniência para atender ao seu estilo de vida saudável.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-surface-dark rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
+<div class="w-16 h-16 rounded-2xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">storefront</span>
+</div>
+<h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-3">Venda Direta</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark mb-6">
+                        Escolha suas frutas avulsas favoritas. Perfeito para compras pontuais ou para experimentar a variedade da estação.
+                    </p>
+<a class="text-sm font-bold text-primary hover:text-secondary transition-colors uppercase tracking-wide" href="#produtos">Comprar Agora</a>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-secondary/20 dark:border-secondary/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-xl">Mais Popular</div>
+<div class="w-16 h-16 rounded-2xl bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary-dark dark:text-yellow-400 text-3xl">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-3">Assinaturas Mensais</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark mb-6">
+                        Receba uma cesta fresca toda semana. Planos flexíveis que garantem saúde constante para sua família com desconto.
+                    </p>
+<a class="text-sm font-bold text-secondary-dark dark:text-yellow-400 hover:text-primary transition-colors uppercase tracking-wide" href="#assinatura">Ver Planos</a>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
+<div class="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-3xl">local_shipping</span>
+</div>
+<h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-3">Entregas Personalizadas</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark mb-6">
+                        Precisa de uma entrega especial para eventos, escritórios ou presentes? Nós personalizamos a logística para você.
+                    </p>
+<a class="text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-primary transition-colors uppercase tracking-wide" href="#">Fale Conosco</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-surface-dark overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+<h2 class="font-display font-bold text-3xl lg:text-4xl text-text-light dark:text-text-dark mb-8">
+                        Por que escolher a ETUTI? <br/>
+<span class="text-primary">8 Benefícios para sua Saúde</span>
+</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Rico em Nutrientes</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Vitaminas essenciais preservadas.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Sabor Superior</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Colheita no ponto ideal de maturação.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Livre de Químicos</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Cultivo orgânico certificado.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Apoio Local</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Fortalece a economia de Angola.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Sustentabilidade</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Menor pegada de carbono.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Variedade Sazonal</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">O melhor de cada época.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Conveniência</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Entrega na porta de casa.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-icons text-green-500 mt-1">check_circle</span>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark">Garantia de Qualidade</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Satisfação ou reposição.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute inset-0 bg-secondary/10 dark:bg-secondary/5 rounded-full transform scale-90 blur-2xl"></div>
+<img alt="Benefícios das frutas" class="relative z-10 w-full rounded-2xl shadow-xl transform hover:scale-[1.02] transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARldPVKQQwGfPwH0Hc-uyJ6epMyKnpgrPwT91JEjYUhP_3X_fE2nhwlIGGZXMeiV0PIrz5bOZQ2qLRa0sLbUqZr0iVDqgMvx-JvsthaSb9OmzkkyEMfWevOkhQwQeBVhKWd-sxbbdY-uS_DUTy6cUghtD97M38rdBZ4JA7ZRREOBETACsRgdgbM6DeenvqzW6-DEAX3NfQHfUgPL4MpIuBGtUwvHpv3QfQAZXffXt3Ce-ZwfFSsrwR2LjOsQ1EvKTY4JoSZCNHv9c"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark" id="produtos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-display font-bold text-3xl lg:text-4xl text-text-light dark:text-text-dark mb-4">Destaques da Estação</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg">As frutas favoritas dos nossos clientes nesta semana.</p>
+</div>
+<a class="inline-flex items-center font-bold text-primary hover:text-primary-dark dark:hover:text-green-400 transition-colors" href="#">
+                    Ver catálogo completo <span class="material-icons ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 dark:hover:border-gray-700 flex flex-col">
+<div class="relative w-full aspect-square rounded-xl bg-yellow-50 dark:bg-gray-800 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
+<span class="absolute top-3 left-3 bg-secondary text-white text-xs font-bold px-2 py-1 rounded-md z-10">-10%</span>
+<img alt="Abacaxi Doce" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVNaN-I7iI53-SExbqpeMZ19EJ5UBqpn_iEATKefQzbKewyCmsu-dqed3DyZVLecBw6pJDA3k3GgMb3c9-BXgf8qLlIhorQ-Y7k0yGB9jCxkhhaiu7I3YT2ThdwWbSggJzhc6aWbilmE_5RhIOoPArslCe3uyfFHQiYLdkDUha5vi_EtMPy8SWtdWRUDcAyMlwwwv42MVlQMYUboXvGiL2MAzvsy0cOt8-L8iFurfSV8Z_y8VT3iAaR5f8FmHqhs_NsF2PD5HNXcI"/>
+<button class="absolute bottom-3 right-3 p-2 bg-white dark:bg-gray-700 text-primary rounded-full shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+<span class="material-icons">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-auto">
+<h3 class="font-bold text-lg text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Abacaxi do Bengo</h3>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Unidade (aprox. 1.5kg)</p>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2">
+<span class="font-bold text-xl text-primary">Kz 1.200</span>
+<span class="text-sm text-gray-400 line-through">Kz 1.350</span>
+</div>
+<div class="flex text-yellow-400 text-xs">
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star_half</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 dark:hover:border-gray-700 flex flex-col">
+<div class="relative w-full aspect-square rounded-xl bg-red-50 dark:bg-gray-800 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
+<img alt="Morangos Frescos" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAan_1zfoC-ywQdNEYVzdDkn-N96QJdvNuJGtcR-AMy_M_FZVrXVxy3LKwpptb8T1lYKjcQvQ8bBYZIoCrfCnlBMIF0nHzkxTF54AGaHeG_sS9MtsPAiCWksP1sH1QjHVG60e4mQ9xHEVsro7bF6m1-RS78wNqGWO85iO_ScdLsoAG1BNWG5h0WiHdjONj2tAjRucufw2D8hahMi-GTRBF7UnkY5Xqz_LMkdc2IBWGU4Tzsp48ewwEyDfAENUGoIQRf7fz7oDoyjPc"/>
+<button class="absolute bottom-3 right-3 p-2 bg-white dark:bg-gray-700 text-primary rounded-full shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+<span class="material-icons">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-auto">
+<h3 class="font-bold text-lg text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Morangos da Huíla</h3>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Caixa 250g</p>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2">
+<span class="font-bold text-xl text-primary">Kz 2.500</span>
+</div>
+<div class="flex text-yellow-400 text-xs">
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 dark:hover:border-gray-700 flex flex-col">
+<div class="relative w-full aspect-square rounded-xl bg-green-50 dark:bg-gray-800 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
+<img alt="Kiwi Importado" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCk2RLoFk9hPWbFvLGPv-3NfFnrm6hCHxZtuVqZtgD9OZ7OfZCCG1qvTUPXsO9OOeQDwAQ1nLbWUJiHmNZ8kBZeiXyiDZLBfbTY00UsIa5Lj8_WcBrVG10RUpbDWI8KkKvCYHtkOhwN89uxxycrWsNIbkPd4QXF3FgaM19lgAgZbR7SSyMWNtvMjytHEzn_Aj8FCraxCQfBDl78wZf-NBn1qKyZfiAfR6QZ_Hj8XVIM7VC655wKcKnNmPXTwH3YoWntg2aT5WXKlE"/>
+<button class="absolute bottom-3 right-3 p-2 bg-white dark:bg-gray-700 text-primary rounded-full shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+<span class="material-icons">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-auto">
+<h3 class="font-bold text-lg text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Kiwi Fresco</h3>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Por Kg</p>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2">
+<span class="font-bold text-xl text-primary">Kz 3.800</span>
+</div>
+<div class="flex text-yellow-400 text-xs">
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons text-gray-300" style="font-size: 14px;">star</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 dark:hover:border-gray-700 flex flex-col">
+<div class="relative w-full aspect-square rounded-xl bg-orange-50 dark:bg-gray-800 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
+<span class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-md z-10">Novo</span>
+<img alt="Laranja do Sul" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEfsndCZZWZEhwVnDtmZpUsUymrUwKcUfpo_neCI4RHFmON-6txEcZ_jla6EiQKrGUCmGTwMarS8O4Gjw82iKYUDK-wkDxpFTb3JGnLE5WyQEFW3AuDPj6-8RQ1Qum4u_hhATsGkvdwAQN_sTPSk1T2thtLcuVCxW2Zn7przCfLBqcqo76PtK_7VU-Fu_mA1y11MelaBPcLavJccyv9w_lq-wLlATFp9pnDyYoRy3RlTv8F9Ol5gIQLGeBIAQvmsdbh5fPLO7dSoE"/>
+<button class="absolute bottom-3 right-3 p-2 bg-white dark:bg-gray-700 text-primary rounded-full shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+<span class="material-icons">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-auto">
+<h3 class="font-bold text-lg text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Laranja do Kwanza Sul</h3>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Saco 2kg</p>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2">
+<span class="font-bold text-xl text-primary">Kz 1.800</span>
+</div>
+<div class="flex text-yellow-400 text-xs">
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+<span class="material-icons" style="font-size: 14px;">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-light dark:bg-surface-dark border-y border-gray-100 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="font-display font-bold text-3xl text-center text-text-light dark:text-text-dark mb-16">
+                Quem prova, <span class="text-secondary">Aprova!</span>
+</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-2xl relative">
+<span class="material-icons text-primary/20 text-6xl absolute top-4 left-4">format_quote</span>
+<div class="relative z-10">
+<div class="flex text-yellow-400 text-sm mb-4">
+<span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+</div>
+<p class="text-text-muted-light dark:text-text-muted-dark italic mb-6">"A qualidade das frutas é incomparável. Chegam sempre frescas e o sabor é muito melhor do que as do supermercado. Recomendo muito!"</p>
+<div class="flex items-center gap-4">
+<img alt="Maria" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRZ-T1XJPQ6f2XxIcBcgz8nZzlJHdhl6WsOlu7AS3rD7i-BxhnLjZylkiJKn7Bni0kjNvVUDWThxUD6fjIToWpFUNraAQA4tUTm_DaxLV6CDzyTWSr-PeAFw4a4y8-esz8S-ct4kVUA9nbuL8JDsL7VMteBRektyJlH9Lcfkq7LSoF-ScmsrOX8V_-C84DGmxeET_QF5jodd-KJM1CLk6Pw_Lv1JLXGSX5-77IS1zW5Z6fHtWPssTMxUlT3yEeSqPxwRvhqCRXTLk"/>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark text-sm">Maria S.</h4>
+<p class="text-xs text-text-muted-light">Talatona, Luanda</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-2xl relative">
+<span class="material-icons text-primary/20 text-6xl absolute top-4 left-4">format_quote</span>
+<div class="relative z-10">
+<div class="flex text-yellow-400 text-sm mb-4">
+<span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+</div>
+<p class="text-text-muted-light dark:text-text-muted-dark italic mb-6">"Fiz a assinatura mensal para o escritório e foi a melhor decisão. A equipe adora ter frutas frescas disponíveis. O serviço é impecável."</p>
+<div class="flex items-center gap-4">
+<img alt="Paulo" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNHeJ0bk6AFg9CCkVnRi4nR4BZL3S1xIWe2PJEYCJsz3siyuC0VgrbYuwrs8f6ZB181m2rjB0gvJXczx82fRwLL8PWw_CUac3o1qMezvJV2Qh-HdVsXNIzKxc-4cfJejZdx941lB1bEEI_EWu3VMBfy57wGkN9ncV41uAOUgC51IS5-tZrhNUfiBrRPag-DeYPZfxpjAYy2ROFNwCJhW-v___1vZHu3yYaSmHsTrxyM9QZi9BnKgGSmMJ7f1P2tHJ0ZQzRmfYDhAA"/>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark text-sm">Paulo M.</h4>
+<p class="text-xs text-text-muted-light">Maianga, Luanda</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-2xl relative">
+<span class="material-icons text-primary/20 text-6xl absolute top-4 left-4">format_quote</span>
+<div class="relative z-10">
+<div class="flex text-yellow-400 text-sm mb-4">
+<span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+</div>
+<p class="text-text-muted-light dark:text-text-muted-dark italic mb-6">"Adoro saber que estou ajudando os produtores locais. As laranjas do Kwanza Sul são as doces que já provei. Entrega super rápida."</p>
+<div class="flex items-center gap-4">
+<img alt="Ana" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt0lPUjZ4UAs7da1t_8FgQtmpS2PIlsPTbJiLbJGRuwu6XBvqHReOJB3PA-QcJ0VTfMz7IubMsXaummt4KCLJNKdlDRdU1LluFORXVq7h20iuY7V1jl8a5fQzEluLfZSWUdPlx3NL33wjOzo5j934vy_kiwQyT7nbF3mdcCNPtfaKT2G6FBuyp6jJWvIwQZhyP536pfdVlszg-lqkj2u-Rzej8RvHdevvyKRE0o2qmsUN2Dn6tWo3BkcmVsRcS_heNvR7ggJvT0-w"/>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark text-sm">Ana P.</h4>
+<p class="text-xs text-text-muted-light">Viana, Luanda</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative overflow-hidden" id="assinatura">
+<div class="absolute inset-0 bg-secondary dark:bg-secondary-dark/40 z-0">
+<svg class="absolute bottom-0 left-0 w-full h-full text-white dark:text-surface-dark opacity-10" preserveAspectRatio="none" viewBox="0 0 100 100">
+<path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="bg-surface-light dark:bg-surface-dark rounded-3xl p-8 lg:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12 border border-gray-100 dark:border-gray-700">
+<div class="flex-1 space-y-6 text-center md:text-left">
+<h2 class="font-display font-extrabold text-3xl md:text-5xl text-text-light dark:text-text-dark leading-tight">
+                        Crie sua <span class="text-primary">Cesta Personalizada</span>
+</h2>
+<p class="text-lg text-text-muted-light dark:text-text-muted-dark">
+                        Escolha suas frutas favoritas e monte uma assinatura mensal. Receba frescor na sua porta toda semana com 15% de desconto.
+                    </p>
+<button class="px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-green-500/30 transform hover:-translate-y-1">
+                        Montar Minha Cesta
+                    </button>
+</div>
+<div class="flex-1 relative">
+<div class="absolute inset-0 bg-yellow-400 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+<img alt="Box de Frutas" class="relative rounded-2xl shadow-xl w-full max-w-md mx-auto transform rotate-3 hover:rotate-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARldPVKQQwGfPwH0Hc-uyJ6epMyKnpgrPwT91JEjYUhP_3X_fE2nhwlIGGZXMeiV0PIrz5bOZQ2qLRa0sLbUqZr0iVDqgMvx-JvsthaSb9OmzkkyEMfWevOkhQwQeBVhKWd-sxbbdY-uS_DUTy6cUghtD97M38rdBZ4JA7ZRREOBETACsRgdgbM6DeenvqzW6-DEAX3NfQHfUgPL4MpIuBGtUwvHpv3QfQAZXffXt3Ce-ZwfFSsrwR2LjOsQ1EvKTY4JoSZCNHv9c"/>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-surface-dark pt-16 pb-8 border-t border-gray-100 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="font-display font-extrabold text-2xl tracking-tight">
+<span class="text-secondary">E</span><span class="text-primary">TUTI</span>
+</span>
+</div>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed mb-6">
+                        Conectando você ao melhor da terra. Frutas frescas, selecionadas e entregues com amor em toda Angola.
+                    </p>
+<div class="mb-6 p-4 bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-800 rounded-xl">
+<p class="text-xs font-semibold text-primary mb-2 uppercase tracking-wide">Pedidos &amp; Pagamentos</p>
+<a class="flex items-center gap-3 text-gray-800 dark:text-white font-bold hover:text-green-600 dark:hover:text-green-400 transition-colors" href="https://wa.me/244900000000">
+<img alt="WhatsApp" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvCUFrkENzEB-4mpzRw0TW6xRSvTGpR1EML6joidJKYZD8Ce9Keq3wNa6J-bp8IGD2hx-EJujw8Mr-nEoTW56dpxofrJKw29j6lQbmvFN5VUczzZpkpJYBnzhvk-Sp7kKU2qhpXpX1mksQOEnsgJ4p7_cZIc0PMiwvgdElbGsVQprMKWY8UFlWm4km0Sqv5TA5DaI-bXwMVGcBYZyOLsj_8hP5yHDC6IohoG06_mh_e_vnC695lBXL2IW7t3iWGTNnDSKStVotiEA"/>
+                            +244 923 000 000
+                        </a>
+</div>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" href="#">
+<span class="text-xs font-bold">IG</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" href="#">
+<span class="text-xs font-bold">FB</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors" href="#">
+<span class="text-xs font-bold">TW</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark mb-6">Empresa</h4>
+<ul class="space-y-4 text-sm text-text-muted-light dark:text-text-muted-dark">
+<li><a class="hover:text-primary transition-colors" href="#sobre">Sobre Nós</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Nossos Produtores</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Carreiras</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Imprensa</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark mb-6">Ajuda</h4>
+<ul class="space-y-4 text-sm text-text-muted-light dark:text-text-muted-dark">
+<li><a class="hover:text-primary transition-colors" href="#">Central de Ajuda</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Termos de Serviço</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Política de Privacidade</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Áreas de Entrega</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text-light dark:text-text-dark mb-6">Newsletter</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-4">Receba ofertas exclusivas e dicas de receitas saudáveis.</p>
+<form class="flex flex-col gap-2">
+<input class="bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-lg px-4 py-2 text-sm focus:ring-primary focus:border-primary dark:text-white" placeholder="Seu email" type="email"/>
+<button class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors" type="submit">
+                            Inscrever-se
+                        </button>
+</form>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 dark:border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark text-center md:text-left">
+                    © 2024 ETUTI. Todos os direitos reservados.
+                </p>
+<p class="text-sm font-semibold text-text-muted-light dark:text-text-muted-dark flex items-center gap-2">
+                   Wete Wa Nsi - O Melhor da Terra
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
