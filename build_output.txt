@@ -1,0 +1,26 @@
+
+> etuti-app@0.1.0 build
+> next build
+
+ΓÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\alexa\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\alexa\Documents\GitHub\Etuti\package-lock.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 6.5s
+  Running TypeScript ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/9) ...
+Error occurred prerendering page "/agricultores". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: useTheme must be used within a ThemeProvider
+    at <unknown> (C:\Users\alexa\Documents\GitHub\Etuti\.next\server\chunks\ssr\[root-of-the-server]__9ba7d34b._.js:1:2021)
+    at <unknown> (C:\Users\alexa\Documents\GitHub\Etuti\.next\server\chunks\ssr\[root-of-the-server]__9828d29f._.js:1:1212) {
+  digest: '1345912171'
+}
+Export encountered an error on /agricultores/page: /agricultores, exiting the build.
+Γ¿» Next.js build worker exited with code: 1 and signal: null

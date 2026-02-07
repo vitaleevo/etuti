@@ -1,7 +1,0 @@
-{
-  "name": "ETUTI - Wete Wa Nsi",
-  "description": "Uma plataforma premium para entrega de frutas frescas e orgânicas diretamente de produtores locais em Angola para a sua mesa.",
-  "requestFramePermissions": [
-    "geolocation"
-  ]
-}

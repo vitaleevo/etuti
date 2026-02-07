@@ -1,0 +1,21 @@
+/* Mobile App specific styles */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 4rem;
+        /* 64px */
+    }
+
+    body {
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        background-color: #f8fafc;
+        /* Ligeiramente mais cinza para parecer app */
+    }
+
+    /* Bottom sheet style for modals would go here */
+
+    /* Safe area for newer iPhones */
+    .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
